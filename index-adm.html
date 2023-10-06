@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width,
+				initial-scale=1.0">
+	<title>Administrador</title>
+	<link rel="stylesheet" href="style-home-adm.css">
+</head>
+
+<body>
+	<header>
+		<a id="ancora-inicio"></a>
+		<nav class="container-nav-principal">
+			<figure class="container-logo">
+				<img src="./img/Logo 1.png" width="260" height="80" alt="">
+			</figure>
+			<div class="user">
+				<img src="./img/user.jfif" width="50" onmouseover="showOptions()" onmouseout="hideOptions()">
+				<div class="options">
+					<a href="./index-user.html" class="config">Pagina</a>
+					<a href="./index-home.html" class="logout">Sair</a>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+	<div class="main-container">
+		<div class="navcontainer">
+			<nav class="nav">
+			</nav>
+		</div>
+
+
+		<div class="main">
+			<div class="searchbar2">
+				<input type="text" name="" id="" placeholder="Search">
+				<div class="searchbtn">
+					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
+						class="icn srchicn" alt="search-button">
+				</div>
+			</div>
+
+			<div class="box-container">
+
+				<div class="box box1">
+					<div class="text">
+						<h2 class="topic-heading">15.050</h2>
+						<h2 class="topic">Vizualizações</h2>
+					</div>
+
+
+					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(31).png"
+						alt="Views">
+				</div>
+
+				<div class="box box2">
+					<div class="text">
+						<h2 class="topic-heading">R$ 30k</h2>
+						<h2 class="topic">Doações</h2>
+					</div>
+					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185030/14.png" alt="likes">
+				</div>
+
+				<div class="box box3">
+					<div class="text">
+						<h2 class="topic-heading">114</h2>
+						<h2 class="topic">Voluntarios</h2>
+					</div>
+
+					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210184645/Untitled-design-(32).png"
+						alt="comments">
+				</div>
+
+				<div class="box box4">
+					<div class="text">
+						<h2 class="topic-heading">368</h2>
+						<h2 class="topic">Sonhos realizados</h2>
+					</div>
+
+					<img src="https://media.geeksforgeeks.org/wp-content/uploads/20221210185029/13.png" alt="published">
+				</div>
+			</div>
+
+			<div class="report-container">
+				<div class="report-header">
+					<h1 class="recent-Articles">Voluntários Cadastrados</h1>
+				</div>
+
+				<table id="volunteersTable">
+					<tr>
+						<th>Nome</th>
+						<th>Email</th>
+						<th>Telefone</th>
+						<th>Ação</th>
+					</tr>
+					<tr>
+						<td>Rodrigo de Oliveira</td>
+						<td>Unidos@gmail.com</td>
+						<td>(11) 987654321</td>
+						<td><i class="fas fa-check-circle" style="color: green;"></i></td>
+					</tr>
+					<tr>
+						<td>Julia Redressa</td>
+						<td>Unidos@gmail.com</td>
+						<td>(22) 999999999</td>
+						<td><i class="fas fa-check-circle" style="color: red;"></i></td>
+					</tr>
+					<tr>
+						<td>Maria Clara</td>
+						<td>Unidos@gmail.com</td>
+						<td>(33) 888888888</td>
+						<td><i class="fas fa-check-circle" style="color: green;"></i></td>
+					</tr>
+					<tr>
+						<td>João Acorsi</td>
+						<td>Unidos@gmail.com</td>
+						<td>(44) 777777777</td>
+						<td><i class="fas fa-check-circle" style="color: green;"></i></td>
+					</tr>
+					<tr>
+						<td>Makoto</td>
+						<td>Unidos@gmail.com</td>
+						<td>(44) 123451233</td>
+						<td><i class="fas fa-check-circle" style="color: red;"></i></td>
+					</tr>
+					<tr>
+						<td>Luiz</td>
+						<td>Unidos@gmail.com</td>
+						<td>(44) 019233231</td>
+						<td><i class="fas fa-check-circle" style="color: green;"></i></td>
+					</tr>
+					<tr>
+						<td>Eduarda</td>
+						<td>Unidos@gmail.com</td>
+						<td>(44) 022222222</td>
+						<td><i class="fas fa-check-circle" style="color: red;"></i></td>
+					</tr>
+				</table>
+
+				<div class="report-header">
+					<h1 class="recent-Articles">Doações recebidas</h1>
+				</div>
+
+				<table id="donationsTable">
+					<tr>
+						<th>Nome</th>
+						<th>Valor</th>
+						<th>Data</th>
+						<th>Ação</th>
+					</tr>
+					<tr>
+						<td>Maria Clara</td>
+						<td>R$50</td>
+						<td>11/01/2023</td>
+						<td><i class="fas fa-check-circle" style="color: red;"></i></td>
+					</tr>
+					<tr>
+						<td>Eduarda</td>
+						<td>R$100</td>
+						<td>12/01/2023</td>
+						<td><i class="fas fa-check-circle" style="color: green;"></i></td>
+					</tr>
+					<tr>
+						<td>Rodrigo de oliveira</td>
+						<td>R$75</td>
+						<td>12/01/2023</td>
+						<td><i class="fas fa-check-circle" style="color: red;"></i></td>
+					</tr>
+					<tr>
+						<td>Julia Redressa</td>
+						<td>R$200</td>
+						<td>12/01/2023</td>
+						<td><i class="fas fa-check-circle" style="color: green;"></i></td>
+					</tr>
+					<tr>
+						<td>Makoto</td>
+						<td>R$200</td>
+						<td>13/01/2023</td>
+						<td><i class="fas fa-check-circle" style="color: green;"></i></td>
+					</tr>
+					<tr>
+						<td>João acorsi</td>
+						<td>R$75</td>
+						<td>13/01/2023</td>
+						<td><i class="fas fa-check-circle" style="color: red;"></i></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body>
+
+
+</html

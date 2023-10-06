@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style-pix.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon_io/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon_io/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon_io/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon_io/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <title>Doação</title>
+  </head>
+
+  <body>
+    <div class="payment-container">
+        <!-- Opções de Pagamento -->
+        <div class="payment-selection">
+            <label>
+                <input type="radio" name="payment-method" value="pix" checked />
+                Pagamento via Pix
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="card" />
+                Pagamento com Cartão
+            </label>
+            <label>
+                <input type="radio" name="payment-method" value="outros" />
+                Outros
+            </label>
+        </div>
+
+        <!-- Conteúdo de Pagamento -->
+        <div class="payment-content">
+            <!-- Pagamento via Pix -->
+            <div class="payment-option" id="pix-option">
+                <h2>Pagamento via Pix</h2>
+                <label for="valor-pix">Valor do Pagamento (em BRL):</label>
+                <input type="text" id="valor-pix" name="valor-pix" required placeholder="R$ 50,00" disabled />
+                <button id="QRcode" onclick="gerarQRCode()">Gerar QR Code</button>
+                <div id="qrcode-container"></div>
+                <input type="file" id="comprovante" name="comprovante" />
+                <div class="button-center">
+                    <button id="enviar-comprovante" style="display: none">Enviar Comprovante</button>
+                </div>
+            </div>
+
+            <!-- Pagamento com Cartão -->
+            <div class="payment-option" id="card-option" style="display: none;">
+                <h2>Pagamento com Cartão de Crédito/Débito</h2>
+                <label for="numero-cartao">Número do Cartão:</label>
+                <input type="text" id="numero-cartao" name="numero-cartao" required />
+                <label for="nome-titular">Nome do Titular:</label>
+                <input type="text" id="nome-titular" name="nome-titular" required />
+                <div class="input-small">
+                    <label for="data-expiracao">Data de Expiração:</label>
+                    <input type="text" id="data-expiracao" name="data-expiracao" placeholder="MM/AA" required />
+                </div>
+                <div class="input-small">
+                    <label for="codigo-seguranca">CVV:</label>
+                    <input type="text" id="codigo-seguranca" name="codigo-seguranca" required />
+                </div>
+                <div class="button-center">
+                    <button id="confirmar-pagamento">Confirmar Pagamento</button>
+                </div>
+            </div>
+
+            <div class="payment-option" id="outros-option" style="display: none;">
+                <h2>Outras Doações</h2>
+                <label for="tipo-doacao">Tipo de Doação:</label>
+                <select id="tipo-doacao" name="tipo-doacao">
+                    <option value="brinquedo">Brinquedo</option>
+                    <option value="roupas">Roupas</option>
+                    <option value="higiene">Produtos de Higiene</option>
+                </select>
+                <label for="foto-doacao">Enviar Foto:</label>
+                <input type="file" id="foto-doacao" name="foto-doacao" required />
+                <p>Por favor, envie sua doação para o seguinte endereço:</p>
+                <address>
+                    Rua das Doações, 123<br>
+                    Bairro Solidário, Cidade Amiga - UF<br>
+                    CEP: 12345-678
+                </address>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function gerarQRCode() {
+            const valorPix = document.getElementById("valor-pix").value;
+            const qrcodeContainer = document.getElementById("qrcode-container");
+            const qrcodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=pix:${encodeURIComponent(
+                `chave=chave_pix&valor=${valorPix}`
+            )}`;
+            qrcodeContainer.innerHTML = `<img src="${qrcodeUrl}" alt="QR Code do Pix">`;
+            document.getElementById("enviar-comprovante").style.display = "block";
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const pixOption = document.getElementById("pix-option");
+            const cardOption = document.getElementById("card-option");
+            const outrosOption = document.getElementById("outros-option");
+            const radioButtons = document.querySelectorAll('input[name="payment-method"]');
+
+            radioButtons.forEach((radio) => {
+                radio.addEventListener("change", function () {
+                    if (this.value === "pix") {
+                        pixOption.style.display = "block";
+                        cardOption.style.display = "none";
+                        outrosOption.style.display = "none";
+                    } else if (this.value === "card") {
+                        pixOption.style.display = "none";
+                        cardOption.style.display = "block";
+                        outrosOption.style.display = "none";
+                    } else if (this.value === "outros") {
+                        pixOption.style.display = "none";
+                        cardOption.style.display = "none";
+                        outrosOption.style.display = "block";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

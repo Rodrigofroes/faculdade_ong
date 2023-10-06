@@ -1,0 +1,85 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+body
+{
+    background: linear-gradient(90deg, #b826e5, #41d2d7);
+    height: 100vh;
+}
+
+.container-conteudo
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container
+{
+    background-color: white;
+    padding: 60px;
+    height: 400px;
+    width: 200px;
+    border-radius: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+figure
+{
+    text-align: center;
+}
+
+
+label
+{
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="password"] 
+{
+  width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: rgba(226, 224, 224, 0.628);
+  outline: none; 
+  margin-bottom: 10px;
+  
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+input
+{
+  margin-right: 5px;
+}
+
+#inputbutton
+{
+    border: none;
+    height: 40px;
+    width: 100px;
+    background-image: linear-gradient(90deg, #b826e5, #41d2d7);
+    border-radius: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 15px;
+}
+
+.container-bu
+{
+    display: flex;
+    justify-content: center;
+}

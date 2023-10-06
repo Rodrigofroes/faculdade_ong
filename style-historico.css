@@ -1,0 +1,78 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #b826e5, #41d2d7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.donation-history-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.donation-history-container .donation-item {
+    padding: 20px;
+    text-align: center;
+    margin: 10px;
+    position: relative;
+}
+
+.donation-history-container .donation-item:nth-child(even) {
+    background-color: #f2f2f2; /* Fundo cinza para as linhas pares */
+}
+
+.donation-history-container h2 {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.donation-history-container .donation-amount {
+    font-weight: bold;
+    font-size: 24px;
+    color: #41d2d7;
+}
+
+.donation-history-container .donation-date {
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.donation-history-container .donation-description {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.donation-history-container .details-button {
+    background-color: #41d2d7;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px; /* Espaço entre os botões "Ver Detalhes" */
+}
+
+.donation-history-container .back-button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.donation-history-container .helped-people {
+    color: #333;
+    font-weight: bold;
+}

@@ -1,0 +1,110 @@
+*
+{
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-decoration: none;
+}
+
+body
+{
+    background: linear-gradient(90deg, #b826e5, #41d2d7);
+    height: 100vh;
+}
+
+section
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-conteudo
+{
+    background-color: white;
+    border-radius: 40px;
+    gap: 50px;
+    width: 760px;
+    height: 460px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1
+{
+    font-size: 30px;
+    color: #5B1072;
+}
+
+.container-conteudo-title
+{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.linha-vertical
+{
+    height: 350px;
+    border-right: 1px solid #5B1072;
+}
+
+.container-conteudo-input
+{
+    padding: 5px;
+}
+
+form .container-conteudo-input label{
+    color: #3D3D3D;
+    display: block;
+    margin-left: 0 auto;
+    width: 70%;
+    display: flex;
+    align-items: center;
+}
+
+form .container-conteudo-input input{
+    width: 100%;
+    height: 17px;
+    background-color: rgba(226, 224, 224, 0.628);
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    padding: 15px;
+    font-size: 15px;
+    color: #616161;
+
+}
+
+.container-conteudo-button
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#button
+{ 
+    width: 100px;
+    height: 47px;
+    background-image: linear-gradient(90deg, #b826e5, #41d2d7);
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    margin-top: 15px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.container-conteudo-span
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    font-size: 15px
+}

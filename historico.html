@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style-historico.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+    <title>Doações</title>
+</head>
+<body>
+    <div class="donation-history-container">
+        <button class="back-button" onclick="voltarParaHome()">Voltar</button>
+        <h2>Histórico de Doações</h2>
+        <div class="donation-item">
+            <span class="donation-amount">R$ 100,00</span>
+            <span class="donation-date">Data: 10/10/2023</span>
+            <span class="donation-description">Doação para caridade</span>
+            <button type="button" id="config_btn" class="btn btn-success" onclick="mostrarDetalhes(1)">Ver Detalhes</button>
+        </div>
+        <div class="donation-item">
+            <span class="donation-amount">R$ 50,00</span>
+            <span class="donation-date">Data: 05/10/2023</span>
+            <span class="donation-description">Doação para abrigo de animais</span>
+            <button type="button" id="config_btn" class="btn btn-success" onclick="mostrarDetalhes(2)">Ver Detalhes</button>
+        </div>
+        <div class="donation-item">
+            <span class="donation-amount">R$ 200,00</span>
+            <span class="donation-date">Data: 02/10/2023</span>
+            <span class="donation-description">Doação para educação</span>
+            <button type="button" id="config_btn" class="btn btn-success" onclick="mostrarDetalhes(3)">Ver Detalhes</button>
+        </div>
+        <div class="donation-item">
+            <span class="donation-amount">R$ 75,00</span>
+            <span class="donation-date">Data: 28/09/2023</span>
+            <span class="donation-description">Doação para alimentação</span>
+            <button type="button" id="config_btn" class="btn btn-success" onclick="mostrarDetalhes(4)">Ver Detalhes</button>
+        </div>
+        <div class="donation-item">
+            <span class="donation-amount">R$ 150,00</span>
+            <span class="donation-date">Data: 20/09/2023</span>
+            <span class="donation-description">Doação para saúde</span>
+            <button type="button" id="config_btn" class="btn btn-success" onclick="mostrarDetalhes(5)">Ver Detalhes</button>
+        </div>
+    </div>
+
+    <script>
+        function mostrarDetalhes(numeroDoacao) {
+            let numeroPessoasAjudadas;
+            switch (numeroDoacao) {
+                case 1:
+                    numeroPessoasAjudadas = 10;
+                    break;
+                case 2:
+                    numeroPessoasAjudadas = 5;
+                    break;
+                case 3:
+                    numeroPessoasAjudadas = 20;
+                    break;
+                case 4:
+                    numeroPessoasAjudadas = 8;
+                    break;
+                case 5:
+                    numeroPessoasAjudadas = 15;
+                    break;
+                default:
+                    numeroPessoasAjudadas = 0;
+            }
+           
+            alert(`Detalhes da doação ${numeroDoacao}\nNúmero de Pessoas Ajudadas: ${numeroPessoasAjudadas}`);
+        }
+
+        function voltarParaHome() {
+            window.location.href = "index-user.html";
+        }
+    </script>
+</body>
+</html>

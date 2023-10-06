@@ -1,0 +1,100 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(90deg, #b826e5, #41d2d7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.payment-container {
+    background-color: white;
+    border-radius: 10px;
+    width: 1000px;
+    height: 550px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    overflow: hidden;
+    position: relative; /* Para permitir position:absolute das opções */
+}
+
+.payment-selection {
+    padding: 30px; 
+    width: 300px; 
+    font-size: 1em; 
+    border-right: 1px solid #e5e5e5; /* Adicionado borda para separar da seção de conteúdo */
+}
+
+.payment-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-option {
+    padding: 10px; 
+    text-align: center;
+    flex: 1;
+    position: absolute; 
+    top: 0;
+    left: 300px; /* Ajustado para corresponder à largura do .payment-selection */
+    right: 0;
+    bottom: 0;
+}
+
+.payment-option:nth-child(1) {
+    color: #333; 
+}
+
+.payment-option label,
+.payment-selection label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.payment-option input,
+.payment-option select { /* Adicionado estilos para o select */
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.button-center {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#QRcode {
+    margin-bottom: 10px;
+}
+
+.payment-option button {
+    background-color: #41d2d7;
+    color: white;
+    border: none;
+    width: 250px;
+    padding: 12px 24px; 
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.payment-selection label {
+    background-color: #e5e5e5;
+    padding: 12px 18px; 
+    border-radius: 5px;
+    margin-bottom: 12px; 
+    cursor: pointer;
+    transition: background-color 0.3s; /* Adicionado transição para efeito ao passar o mouse */
+}
+
+/* Efeito de hover para os labels de seleção */
+.payment-selection label:hover {
+    background-color: #d2d2d2;
+}
