@@ -45,83 +45,85 @@
     <div class="box">
       <div class="form-box">
         <h2>Criar Conta</h2>
-        <form action="./index-user.html">
+        <form id="form" action="./index-user.html">
           <div class="row g-3">
             <div class="col-6">
               <label for="inputName" class="form-label">Nome completo</label>
               <input
-                type="text"
-                required
+                type="text"              
                 class="form-control"
                 id="inputName"
                 placeholder="Ex: João Silva"
+                onfocus="MyFocus(this)"
+                maxlength="8"
               />
             </div>
             <div class="col-6">
               <label for="inputCPF" class="form-label">CPF</label>
               <input
-                type="text"
-                required
+                type="text"              
                 class="form-control"
                 id="inputCPF"
                 placeholder="Ex: 123.456.789-00"
+                onfocus="MyFocus(this)"
               />
             </div>
             <div class="col-md-6">
               <label for="inputEmail4" class="form-label">Email</label>
               <input
-                type="email"
-                required
+                type="email"              
                 class="form-control"
                 id="inputEmail4"
                 placeholder="Ex: joao.silva@email.com"
+                onfocus="MyFocus(this)"
               />
             </div>
             <div class="col-md-6">
               <label for="inputPassword4" class="form-label">Senha</label>
               <input
-                type="password"
-                required
+                type="password"              
                 class="form-control"
                 id="inputPassword4"
                 placeholder="Insira uma senha segura"
+                onfocus="MyFocus(this)"
               />
             </div>
 
             <div class="col-6">
               <label for="inputPhone" class="form-label">Telefone</label>
               <input
-                type="text"
-                required
+                type="text"              
                 class="form-control"
                 id="inputPhone"
                 placeholder="Ex: (11) 98765-4321"
+                onfocus="MyFocus(this)"
+                maxlength="8"
               />
             </div>
             <div class="col-6">
               <label for="inputAddress" class="form-label">Endereço</label>
               <input
-                type="text"
-                required
+                type="text"              
                 class="form-control"
                 id="inputAddress"
                 placeholder="Ex: Rua das Flores, 123"
+                onfocus="MyFocus(this)"
               />
             </div>
             <div class="col-md-6">
               <label for="inputCity" class="form-label">Cidade</label>
               <input
-                type="text"
-                required
+                type="text"              
                 class="form-control"
                 id="inputCity"
                 placeholder="Ex: São Paulo"
+                onfocus="MyFocus(this)"
               />
             </div>
 
             <div class="col-md-4">
               <label for="inputState" class="form-label">Estado</label>
-              <select id="inputState" class="form-select" required pla>
+              <select id="inputState" class="form-select" onfocus="MyFocus(this)">
                 <option selected></option>
                 <option>AL</option>
                 <option>AP</option>
@@ -164,7 +166,7 @@
               </div>
             </div>
             <div class="col-12 btn_cad">
-              <button type="submit" id="cad_btn" class="btn btn-primary">
+              <button type="submit" id="cad_btn" class="btn btn-primary" onclick="carregarDados()">
                 Cadastrar
               </button>
             </div>
@@ -173,4 +175,5 @@
       </div>
     </div>
   </body>
+  <script src="./main.js"></script>
 </html>

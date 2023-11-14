@@ -70,7 +70,7 @@
                 <div id="qrcode-container"></div>
                 <input type="file" id="comprovante" name="comprovante" />
                 <div class="button-center">
-                    <button id="enviar-comprovante" style="display: none">Enviar Comprovante</button>
+                    <button id="enviar-comprovante" style="display: none" onclick="HomePage()">Enviar Comprovante</button>
                 </div>
             </div>
 
@@ -90,7 +90,7 @@
                     <input type="text" id="codigo-seguranca" name="codigo-seguranca" required />
                 </div>
                 <div class="button-center">
-                    <button id="confirmar-pagamento">Confirmar Pagamento</button>
+                    <button id="confirmar-pagamento" onclick="HomePage()">Confirmar Pagamento</button>
                 </div>
             </div>
 
@@ -106,10 +106,13 @@
                 <input type="file" id="foto-doacao" name="foto-doacao" required />
                 <p>Por favor, envie sua doação para o seguinte endereço:</p>
                 <address>
-                    Rua das Doações, 123<br>
-                    Bairro Solidário, Cidade Amiga - UF<br>
-                    CEP: 12345-678
+                    R. José Bongiovani, 700<br>
+                    Cidade Universitária, Pres. Prudente - SP<br>
+                    CEP: 19050-920
                 </address>
+                <div class="button-center">
+                    <button id="enviar-comprovante" onclick="HomePage()">Enviar</button>
+                </div>
             </div>
         </div>
     </div>
@@ -149,6 +152,14 @@
                 });
             });
         });
+
+        function HomePage(){
+            alert('Comprovante enviado com sucesso!');
+            var escolha = confirm('Deseja voltar para pagina inicial?');
+            if(escolha == true){
+                window.location.href = "index-home.html"
+            }
+        }
     </script>
 </body>
 
